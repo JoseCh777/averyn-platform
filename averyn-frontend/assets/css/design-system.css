@@ -296,7 +296,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .av-login-side { background: var(--av-navy); border-radius: 22px; color: #fff; overflow: hidden; position: relative; }
 .av-login-side::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 12%, rgba(0, 172, 210, .5), transparent 32%), linear-gradient(145deg, transparent, rgba(20, 95, 238, .35)); }
 .av-login-side > * { position: relative; z-index: 1; }
-.av-login-watermark { position: absolute; z-index: 0; right: -2rem; bottom: -1rem; width: clamp(220px, 38%, 340px); opacity: .18; filter: grayscale(1) brightness(.98); pointer-events: none; }
+.av-login-watermark { position: absolute; z-index: 0; left: -2rem; bottom: -1rem; width: clamp(220px, 38%, 340px); opacity: .18; filter: grayscale(1) brightness(.98); pointer-events: none; }
 .av-logo-login { width: 150px; }
 
 /* ============================================================
