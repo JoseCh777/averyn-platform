@@ -14,7 +14,6 @@
   </head>
   <body>
     <main class="av-login-page d-flex align-items-center py-3 py-lg-4">
-      <img class="av-logo av-login-brand d-none d-lg-block" src="assets/img/logo-negro.png" alt="Averyn" />
       <div class="container">
         <div class="av-auth" id="auth-card">
 
@@ -23,12 +22,10 @@
             <div>
               <div class="av-auth-logo mb-4"><img src="assets/img/logo-blanco.png" alt="Averyn" /></div>
               <div class="av-auth-copy is-active" data-mode="login">
-                <div class="av-eyebrow av-auth-eyebrow mb-3">Centro de operaciones</div>
                 <h1 class="display-5 fw-bold mb-3">Todo listo para continuar.</h1>
                 <p class="av-auth-side-text mb-0">Accede al espacio donde tu operación electoral toma forma, con información clara y control en cada paso.</p>
               </div>
               <div class="av-auth-copy" data-mode="register">
-                <div class="av-eyebrow av-auth-eyebrow mb-3">Área de cuentas</div>
                 <h1 class="display-5 fw-bold mb-3">Empieza a gestionar tus procesos electorales.</h1>
                 <p class="av-auth-side-text mb-0">Crea tu cuenta para controlar cada etapa de tus procesos con seguridad y transparencia desde el inicio.</p>
               </div>
@@ -36,10 +33,7 @@
             <div class="av-auth-side-foot">
               <div class="d-flex align-items-center gap-3 mb-3 av-auth-shield-row">
                 <div class="rounded-circle d-grid place-items-center av-auth-shield"><i class="bi bi-shield-check fs-5"></i></div>
-                <div>
-                  <div class="fw-semibold">Acceso protegido</div>
-                  <small class="text-white-50">Tu información permanece bajo control.</small>
-                </div>
+                <div class="av-auth-shield-text"><span class="fw-semibold">Seguridad y privacidad</span><br />Tus datos y procesos están protegidos.</div>
               </div>
               <small class="text-white-50">Averyn · Gestión electoral segura</small>
             </div>
@@ -50,10 +44,10 @@
             <div class="d-lg-none mb-4"><img class="av-logo av-logo-login" src="assets/img/logo-negro.png" alt="Averyn" /></div>
             <a class="btn btn-link text-decoration-none p-0 av-muted small mb-4" href="index.html"><i class="bi bi-arrow-left me-1"></i> Volver al inicio</a>
 
+            <div class="av-auth-forms">
             <!-- Modo: Iniciar sesión -->
             <div class="av-auth-form is-active" data-mode="login">
               <div class="mb-4">
-                <div class="av-eyebrow mb-3">Acceso a la plataforma</div>
                 <h2 class="display-6 fw-bold mb-2">Bienvenido de nuevo.</h2>
                 <p class="av-muted mb-0">Ingresa tus credenciales para continuar.</p>
               </div>
@@ -88,7 +82,6 @@
             <!-- Modo: Registrarse -->
             <div class="av-auth-form" data-mode="register">
               <div class="mb-4">
-                <div class="av-eyebrow mb-3">Registro de cuenta</div>
                 <h2 class="display-6 fw-bold mb-2">Crea tu cuenta.</h2>
                 <p class="av-muted mb-0">Completa los datos para empezar a gestionar tus procesos.</p>
               </div>
@@ -137,6 +130,7 @@
                 </button>
               </form>
               <button type="button" id="switch-to-login" class="btn btn-link w-100 mt-3 text-decoration-none av-auth-switch"><span class="fw-semibold">¿Ya tienes cuenta? <span class="av-auth-switch-accent">Inicia sesión</span></span></button>
+            </div>
             </div>
 
           </section>
