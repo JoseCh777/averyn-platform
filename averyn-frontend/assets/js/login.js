@@ -11,9 +11,21 @@
   var loginAlertIds = ['alert-error', 'alert-success', 'alert-info'];
   var regAlertIds = ['reg-alert-error', 'reg-alert-success'];
 
+  var copies = document.querySelectorAll('.av-auth-copy');
+  var forms = document.querySelectorAll('.av-auth-form');
+
   var resetAlerts = function () {
     loginAlertIds.concat(regAlertIds).forEach(function (id) {
       hide(document.getElementById(id));
+    });
+  };
+
+  var showMode = function (mode) {
+    Array.prototype.forEach.call(copies, function (el) {
+      el.classList.toggle('is-active', el.getAttribute('data-mode') === mode);
+    });
+    Array.prototype.forEach.call(forms, function (el) {
+      el.classList.toggle('is-active', el.getAttribute('data-mode') === mode);
     });
   };
 
@@ -22,9 +34,10 @@
     authCard.classList.toggle('is-signed-up', register);
     resetAlerts();
     window.setTimeout(function () {
+      showMode(mode);
       var target = document.getElementById(register ? 'reg-name' : 'email');
       if (target) { target.focus(); }
-    }, 150);
+    }, 280);
   };
 
   document.getElementById('switch-to-register').addEventListener('click', function () {

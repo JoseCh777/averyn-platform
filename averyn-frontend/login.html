@@ -17,142 +17,130 @@
       <img class="av-logo av-login-brand d-none d-lg-block" src="assets/img/logo-negro.png" alt="Averyn" />
       <div class="container">
         <div class="av-auth" id="auth-card">
-          <div class="av-auth-track" id="auth-track">
 
-            <!-- Tarjeta: Iniciar sesión -->
-            <div class="av-auth-card">
-              <aside class="av-auth-side">
+          <!-- Panel oscuro -->
+          <aside class="av-auth-side">
+            <div>
+              <div class="av-brand-reversed mb-4">Averyn</div>
+              <div class="av-auth-copy is-active" data-mode="login">
+                <div class="av-eyebrow av-auth-eyebrow mb-3">Centro de operaciones</div>
+                <h1 class="display-5 fw-bold mb-3">Todo listo para continuar.</h1>
+                <p class="av-auth-side-text mb-0">Accede al espacio donde tu operación electoral toma forma, con información clara y control en cada paso.</p>
+              </div>
+              <div class="av-auth-copy" data-mode="register">
+                <div class="av-eyebrow av-auth-eyebrow mb-3">Área de cuentas</div>
+                <h1 class="display-5 fw-bold mb-3">Empieza a gestionar tus procesos electorales.</h1>
+                <p class="av-auth-side-text mb-0">Crea tu cuenta para controlar cada etapa de tus procesos con seguridad y transparencia desde el inicio.</p>
+              </div>
+            </div>
+            <div class="av-auth-side-foot">
+              <div class="d-flex align-items-center gap-3 mb-3 av-auth-shield-row">
+                <div class="rounded-circle d-grid place-items-center av-auth-shield"><i class="bi bi-shield-check fs-5"></i></div>
                 <div>
-                  <div class="av-brand-reversed mb-4">Averyn</div>
-                  <div class="av-eyebrow av-auth-eyebrow">Centro de operaciones</div>
-                  <h1 class="display-5 fw-bold mt-3 mb-3">Todo listo para continuar.</h1>
-                  <p class="av-auth-side-text mb-0">Accede al espacio donde tu operación electoral toma forma, con información clara y control en cada paso.</p>
+                  <div class="fw-semibold">Acceso protegido</div>
+                  <small class="text-white-50">Tu información permanece bajo control.</small>
                 </div>
-                <div class="av-auth-side-foot">
-                  <div class="d-flex align-items-center gap-3 mb-3 av-auth-shield-row">
-                    <div class="rounded-circle d-grid place-items-center av-auth-shield"><i class="bi bi-shield-check fs-5"></i></div>
-                    <div>
-                      <div class="fw-semibold">Acceso protegido</div>
-                      <small class="text-white-50">Tu información permanece bajo control.</small>
-                    </div>
+              </div>
+              <small class="text-white-50">Averyn · Gestión electoral segura</small>
+            </div>
+          </aside>
+
+          <!-- Panel blanco -->
+          <section class="av-auth-panel">
+            <div class="d-lg-none mb-4"><img class="av-logo av-logo-login" src="assets/img/logo-negro.png" alt="Averyn" /></div>
+            <a class="btn btn-link text-decoration-none p-0 av-muted small mb-4" href="index.html"><i class="bi bi-arrow-left me-1"></i> Volver al inicio</a>
+
+            <!-- Modo: Iniciar sesión -->
+            <div class="av-auth-form is-active" data-mode="login">
+              <div class="mb-4">
+                <div class="av-eyebrow mb-3">Acceso a la plataforma</div>
+                <h2 class="display-6 fw-bold mb-2">Bienvenido de nuevo.</h2>
+                <p class="av-muted mb-0">Ingresa tus credenciales para continuar.</p>
+              </div>
+              <form id="login-form" novalidate>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Correo electrónico</label>
+                  <input id="email" name="email" type="email" class="form-control av-login-input" placeholder="nombre@organizacion.com" autocomplete="email" />
+                </div>
+                <div class="mb-3">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <button type="button" id="forgot-link" class="btn btn-link p-0 small text-decoration-none">¿Olvidaste tu contraseña?</button>
                   </div>
-                  <small class="text-white-50">Averyn · Gestión electoral segura</small>
-                </div>
-              </aside>
-              <section class="av-auth-panel">
-                <div class="d-lg-none mb-4"><img class="av-logo av-logo-login" src="assets/img/logo-negro.png" alt="Averyn" /></div>
-                <a class="btn btn-link text-decoration-none p-0 av-muted small mb-4" href="index.html"><i class="bi bi-arrow-left me-1"></i> Volver al inicio</a>
-                <div class="mb-4">
-                  <div class="av-eyebrow mb-3">Acceso a la plataforma</div>
-                  <h2 class="display-6 fw-bold mb-2">Bienvenido de nuevo.</h2>
-                  <p class="av-muted mb-0">Ingresa tus credenciales para continuar.</p>
-                </div>
-                <form id="login-form" novalidate>
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Correo electrónico</label>
-                    <input id="email" name="email" type="email" class="form-control av-login-input" placeholder="nombre@organizacion.com" autocomplete="email" />
+                  <div class="input-group">
+                    <input id="password" name="password" type="password" class="form-control av-login-input border-end-0" placeholder="Ingresa tu contraseña" autocomplete="current-password" />
+                    <button class="btn border border-start-0 av-login-input" type="button" id="toggle-password" aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button>
                   </div>
-                  <div class="mb-3">
+                  <small id="password-help" class="av-input-help" aria-live="polite"></small>
+                </div>
+                <div id="alert-error" class="av-alert av-alert--error py-2 small mb-0" role="alert" hidden><i class="bi bi-exclamation-circle me-1"></i><span></span></div>
+                <div id="alert-success" class="av-alert av-alert--success py-2 small mb-0" role="status" hidden><i class="bi bi-check-circle me-1"></i><span></span></div>
+                <div id="alert-info" class="av-alert av-alert--info py-2 small mb-0" role="status" hidden><i class="bi bi-info-circle me-1"></i><span></span></div>
+                <button type="submit" id="submit-btn" class="btn av-btn-primary w-100 mt-3">
+                  <span id="submit-idle"><i class="bi bi-lock me-2"></i>Ingresar de forma segura</span>
+                  <span id="submit-loading" hidden><span class="spinner-border spinner-border-sm me-2"></span>Verificando...</span>
+                </button>
+              </form>
+              <div class="d-flex align-items-center gap-2 justify-content-center mt-4 small av-muted"><i class="bi bi-shield-check text-success"></i>Conexión segura y protegida</div>
+              <button type="button" id="switch-to-register" class="btn btn-link w-100 mt-3 text-decoration-none av-auth-switch"><span class="fw-semibold">¿No tienes cuenta? <span class="av-auth-switch-accent">Regístrate</span></span></button>
+            </div>
+
+            <!-- Modo: Registrarse -->
+            <div class="av-auth-form" data-mode="register">
+              <div class="mb-4">
+                <div class="av-eyebrow mb-3">Registro de cuenta</div>
+                <h2 class="display-6 fw-bold mb-2">Crea tu cuenta.</h2>
+                <p class="av-muted mb-0">Completa los datos para empezar a gestionar tus procesos.</p>
+              </div>
+              <form id="register-form" novalidate>
+                <div class="mb-3">
+                  <label for="reg-name" class="form-label">Nombre completo</label>
+                  <input id="reg-name" name="name" type="text" class="form-control av-login-input" placeholder="Tu nombre completo" autocomplete="name" />
+                </div>
+                <div class="mb-3">
+                  <label for="reg-email" class="form-label">Correo electrónico</label>
+                  <input id="reg-email" name="email" type="email" class="form-control av-login-input" placeholder="nombre@organizacion.com" autocomplete="email" />
+                </div>
+                <div class="mb-3">
+                  <label for="reg-password" class="form-label">Contraseña</label>
+                  <div class="input-group">
+                    <input id="reg-password" name="password" type="password" class="form-control av-login-input border-end-0" placeholder="Crea una contraseña segura" autocomplete="new-password" />
+                    <button class="btn border border-start-0 av-login-input" type="button" id="toggle-reg-password" aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button>
+                  </div>
+                  <div class="av-pw mt-2">
                     <div class="d-flex justify-content-between align-items-center">
-                      <label for="password" class="form-label">Contraseña</label>
-                      <button type="button" id="forgot-link" class="btn btn-link p-0 small text-decoration-none">¿Olvidaste tu contraseña?</button>
+                      <small class="av-muted">Fortaleza de la contraseña</small>
+                      <small class="av-pw-label" id="pw-label" aria-live="polite"></small>
                     </div>
-                    <div class="input-group">
-                      <input id="password" name="password" type="password" class="form-control av-login-input border-end-0" placeholder="Ingresa tu contraseña" autocomplete="current-password" />
-                      <button class="btn border border-start-0 av-login-input" type="button" id="toggle-password" aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button>
-                    </div>
-                    <small id="password-help" class="av-input-help" aria-live="polite"></small>
+                    <div class="av-pw-track"><div class="av-pw-bar" id="pw-bar"></div></div>
+                    <ul class="list-unstyled mb-0 mt-1">
+                      <li class="av-pw-item" data-rule="length"><i class="bi bi-check-lg"></i> Mínimo de 8 caracteres</li>
+                      <li class="av-pw-item" data-rule="case"><i class="bi bi-check-lg"></i> Letras minúsculas y mayúsculas</li>
+                      <li class="av-pw-item" data-rule="number"><i class="bi bi-check-lg"></i> Al menos 1 número</li>
+                      <li class="av-pw-item" data-rule="symbol"><i class="bi bi-check-lg"></i> Al menos 1 símbolo</li>
+                    </ul>
                   </div>
-                  <div id="alert-error" class="av-alert av-alert--error py-2 small mb-0" role="alert" hidden><i class="bi bi-exclamation-circle me-1"></i><span></span></div>
-                  <div id="alert-success" class="av-alert av-alert--success py-2 small mb-0" role="status" hidden><i class="bi bi-check-circle me-1"></i><span></span></div>
-                  <div id="alert-info" class="av-alert av-alert--info py-2 small mb-0" role="status" hidden><i class="bi bi-info-circle me-1"></i><span></span></div>
-                  <button type="submit" id="submit-btn" class="btn av-btn-primary w-100 mt-3">
-                    <span id="submit-idle"><i class="bi bi-lock me-2"></i>Ingresar de forma segura</span>
-                    <span id="submit-loading" hidden><span class="spinner-border spinner-border-sm me-2"></span>Verificando...</span>
-                  </button>
-                </form>
-                <div class="d-flex align-items-center gap-2 justify-content-center mt-4 small av-muted"><i class="bi bi-shield-check text-success"></i>Conexión segura y protegida</div>
-                <button type="button" id="switch-to-register" class="btn btn-link w-100 mt-3 text-decoration-none av-auth-switch"><span class="fw-semibold">¿No tienes cuenta? <span class="av-auth-switch-accent">Regístrate</span></span></button>
-              </section>
+                </div>
+                <div class="mb-3">
+                  <label for="reg-confirm" class="form-label">Confirmar contraseña</label>
+                  <div class="input-group">
+                    <input id="reg-confirm" name="confirm" type="password" class="form-control av-login-input border-end-0" placeholder="Repite tu contraseña" autocomplete="new-password" />
+                    <button class="btn border border-start-0 av-login-input" type="button" id="toggle-reg-confirm" aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button>
+                  </div>
+                  <small id="reg-confirm-help" class="av-input-help" aria-live="polite"></small>
+                </div>
+                <div id="reg-alert-error" class="av-alert av-alert--error py-2 small mb-0" role="alert" hidden><i class="bi bi-exclamation-circle me-1"></i><span></span></div>
+                <div id="reg-alert-success" class="av-alert av-alert--success py-2 small mb-0" role="status" hidden><i class="bi bi-check-circle me-1"></i><span></span></div>
+                <button type="submit" id="reg-submit-btn" class="btn av-btn-primary w-100 mt-3" disabled>
+                  <span id="reg-submit-idle"><i class="bi bi-person-plus me-2"></i>Crear cuenta</span>
+                  <span id="reg-submit-loading" hidden><span class="spinner-border spinner-border-sm me-2"></span>Creando cuenta...</span>
+                </button>
+              </form>
+              <button type="button" id="switch-to-login" class="btn btn-link w-100 mt-3 text-decoration-none av-auth-switch"><span class="fw-semibold">¿Ya tienes cuenta? <span class="av-auth-switch-accent">Inicia sesión</span></span></button>
             </div>
 
-            <!-- Tarjeta: Registrarse -->
-            <div class="av-auth-card">
-              <aside class="av-auth-side">
-                <div>
-                  <div class="av-brand-reversed mb-4">Averyn</div>
-                  <div class="av-eyebrow av-auth-eyebrow">Área de cuentas</div>
-                  <h1 class="display-5 fw-bold mt-3 mb-3">Empieza a gestionar tus procesos electorales.</h1>
-                  <p class="av-auth-side-text mb-0">Crea tu cuenta para controlar cada etapa de tus procesos con seguridad y transparencia desde el inicio.</p>
-                </div>
-                <div class="av-auth-side-foot">
-                  <div class="d-flex align-items-center gap-3 mb-3 av-auth-shield-row">
-                    <div class="rounded-circle d-grid place-items-center av-auth-shield"><i class="bi bi-shield-check fs-5"></i></div>
-                    <div>
-                      <div class="fw-semibold">Acceso protegido</div>
-                      <small class="text-white-50">Tu información permanece bajo control.</small>
-                    </div>
-                  </div>
-                  <small class="text-white-50">Averyn · Gestión electoral segura</small>
-                </div>
-              </aside>
-              <section class="av-auth-panel">
-                <div class="d-lg-none mb-4"><img class="av-logo av-logo-login" src="assets/img/logo-negro.png" alt="Averyn" /></div>
-                <a class="btn btn-link text-decoration-none p-0 av-muted small mb-4" href="index.html"><i class="bi bi-arrow-left me-1"></i> Volver al inicio</a>
-                <div class="mb-4">
-                  <div class="av-eyebrow mb-3">Registro de cuenta</div>
-                  <h2 class="display-6 fw-bold mb-2">Crea tu cuenta.</h2>
-                  <p class="av-muted mb-0">Completa los datos para empezar a gestionar tus procesos.</p>
-                </div>
-                <form id="register-form" novalidate>
-                  <div class="mb-3">
-                    <label for="reg-name" class="form-label">Nombre completo</label>
-                    <input id="reg-name" name="name" type="text" class="form-control av-login-input" placeholder="Tu nombre completo" autocomplete="name" />
-                  </div>
-                  <div class="mb-3">
-                    <label for="reg-email" class="form-label">Correo electrónico</label>
-                    <input id="reg-email" name="email" type="email" class="form-control av-login-input" placeholder="nombre@organizacion.com" autocomplete="email" />
-                  </div>
-                  <div class="mb-3">
-                    <label for="reg-password" class="form-label">Contraseña</label>
-                    <div class="input-group">
-                      <input id="reg-password" name="password" type="password" class="form-control av-login-input border-end-0" placeholder="Crea una contraseña segura" autocomplete="new-password" />
-                      <button class="btn border border-start-0 av-login-input" type="button" id="toggle-reg-password" aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button>
-                    </div>
-                    <div class="av-pw mt-2">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <small class="av-muted">Fortaleza de la contraseña</small>
-                        <small class="av-pw-label" id="pw-label" aria-live="polite"></small>
-                      </div>
-                      <div class="av-pw-track"><div class="av-pw-bar" id="pw-bar"></div></div>
-                      <ul class="list-unstyled mb-0 mt-1">
-                        <li class="av-pw-item" data-rule="length"><i class="bi bi-check-lg"></i> Mínimo de 8 caracteres</li>
-                        <li class="av-pw-item" data-rule="case"><i class="bi bi-check-lg"></i> Letras minúsculas y mayúsculas</li>
-                        <li class="av-pw-item" data-rule="number"><i class="bi bi-check-lg"></i> Al menos 1 número</li>
-                        <li class="av-pw-item" data-rule="symbol"><i class="bi bi-check-lg"></i> Al menos 1 símbolo</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="reg-confirm" class="form-label">Confirmar contraseña</label>
-                    <div class="input-group">
-                      <input id="reg-confirm" name="confirm" type="password" class="form-control av-login-input border-end-0" placeholder="Repite tu contraseña" autocomplete="new-password" />
-                      <button class="btn border border-start-0 av-login-input" type="button" id="toggle-reg-confirm" aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button>
-                    </div>
-                    <small id="reg-confirm-help" class="av-input-help" aria-live="polite"></small>
-                  </div>
-                  <div id="reg-alert-error" class="av-alert av-alert--error py-2 small mb-0" role="alert" hidden><i class="bi bi-exclamation-circle me-1"></i><span></span></div>
-                  <div id="reg-alert-success" class="av-alert av-alert--success py-2 small mb-0" role="status" hidden><i class="bi bi-check-circle me-1"></i><span></span></div>
-                  <button type="submit" id="reg-submit-btn" class="btn av-btn-primary w-100 mt-3" disabled>
-                    <span id="reg-submit-idle"><i class="bi bi-person-plus me-2"></i>Crear cuenta</span>
-                    <span id="reg-submit-loading" hidden><span class="spinner-border spinner-border-sm me-2"></span>Creando cuenta...</span>
-                  </button>
-                </form>
-                <button type="button" id="switch-to-login" class="btn btn-link w-100 mt-3 text-decoration-none av-auth-switch"><span class="fw-semibold">¿Ya tienes cuenta? <span class="av-auth-switch-accent">Inicia sesión</span></span></button>
-              </section>
-            </div>
+          </section>
 
-          </div>
         </div>
       </div>
     </main>
