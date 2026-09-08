@@ -193,7 +193,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .av-display { font-size: clamp(2.55rem, 5vw, 4.65rem); line-height: .98; letter-spacing: -.06em; font-weight: 700; }
 .av-display em { color: var(--av-blue); font-style: normal; }
 .av-lead { color: var(--av-gray-600); font-size: 1.08rem; line-height: 1.7; max-width: 560px; }
-.av-hero-liquid { position: relative; min-height: 760px; overflow: hidden; isolation: isolate; background: #dcecff; }
+.av-hero-liquid { position: relative; min-height: 760px; overflow: hidden; isolation: isolate; background: #dcecff; content-visibility: auto; contain-intrinsic-size: auto 760px; }
 .av-ballot-image { position: absolute; inset: 0; z-index: -3; background-image: linear-gradient(180deg, rgba(213, 232, 255, .08) 0%, rgba(219, 238, 255, .12) 48%, rgba(4, 20, 54, .72) 100%), url('../img/ballot-hero.png'); background-size: cover; background-position: center 20%; }
 .av-hero-liquid::after { content: ''; position: absolute; inset: 0; z-index: -2; width: auto; height: auto; top: 0; right: 0; border: 0; border-radius: 0; box-shadow: none; background: linear-gradient(180deg, rgba(235, 246, 255, .08) 0%, transparent 42%, rgba(0, 12, 36, .7) 100%); }
 .av-hero-logo-mark { position: absolute; z-index: 1; left: 50%; top: clamp(6.5rem, 13vh, 9rem); width: clamp(420px, 52vw, 700px); height: auto; opacity: 0; cursor: pointer; transform: translateX(-50%) translateY(18px) scale(.96); animation: av-logo-reveal .9s cubic-bezier(.23, 1, .32, 1) .12s forwards; transition: opacity .34s cubic-bezier(.23, 1, .32, 1), transform .34s cubic-bezier(.23, 1, .32, 1); }
@@ -215,7 +215,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 @keyframes av-rise-in { to { opacity: 1; transform: translateY(0); } }
 
 /* --- Secciones --- */
-.av-section { padding: 6rem 0; }
+.av-section { padding: 6rem 0; content-visibility: auto; contain-intrinsic-size: auto 560px; }
 .av-section-soft { background: var(--av-gray-50); }
 .av-section-capabilities { position: relative; min-height: 760px; overflow: hidden; color: #fff; background: #071a36; }
 .av-section-capabilities::before { content: ''; position: absolute; inset: 0; opacity: .13; pointer-events: none; background-image: linear-gradient(120deg, transparent 0 49.5%, rgba(85, 214, 255, .22) 49.5% 50%, transparent 50% 100%), linear-gradient(30deg, transparent 0 49.5%, rgba(85, 214, 255, .12) 49.5% 50%, transparent 50% 100%); background-size: 72px 72px, 72px 72px; }
@@ -231,6 +231,10 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .av-section-architecture { background: #f4f6fa; }
 .av-section-cta { background: #f4f6fa; }
 .av-section-process, .av-section-architecture, .av-section-cta { position: relative; border-top: 1px solid rgba(20, 95, 238, .1); transition: border-color .22s ease, box-shadow .22s ease; }
+.av-section-capabilities { contain-intrinsic-size: auto 760px; }
+.av-section-process { contain-intrinsic-size: auto 520px; }
+.av-section-architecture { contain-intrinsic-size: auto 680px; }
+.av-section-cta { contain-intrinsic-size: auto 360px; }
 .av-section-process:hover, .av-section-architecture:hover, .av-section-cta:hover { border-top-color: rgba(20, 95, 238, .28); box-shadow: inset 0 1px 0 rgba(20, 95, 238, .12); }
 .av-section-capabilities + .av-section-process { border-top-color: rgba(255, 255, 255, .16); }
 .av-section-capabilities + .av-section-process:hover { border-top-color: rgba(255, 255, 255, .38); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14); }
@@ -238,7 +242,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .av-section-divider::before { content: ''; position: absolute; width: min(70%, 760px); height: 1px; background: rgba(20, 95, 238, .18); transition: height .22s ease, background-color .22s ease, box-shadow .22s ease; }
 .av-section-divider:hover::before { height: 2px; background: rgba(20, 95, 238, .38); box-shadow: 0 0 8px rgba(20, 95, 238, .12); }
 .av-section-divider span { position: relative; z-index: 1; width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(20, 95, 238, .18); border-radius: 50%; color: var(--av-blue); background: var(--av-white); box-shadow: 0 8px 20px rgba(20, 95, 238, .1); }
-.av-reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s cubic-bezier(.23, 1, .32, 1), transform .7s cubic-bezier(.23, 1, .32, 1); }
+.av-reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s cubic-bezier(.23, 1, .32, 1), transform .7s cubic-bezier(.23, 1, .32, 1); }
 .av-reveal.is-visible { opacity: 1; transform: translateY(0); }
 .av-section-title { font-size: clamp(2rem, 3vw, 3rem); line-height: 1.05; letter-spacing: -.045em; }
 .av-feature-card { height: 100%; padding: 1.6rem; border: 1px solid var(--av-gray-100); border-radius: var(--av-radius-lg); background: #fff; box-shadow: var(--av-shadow-sm); transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
@@ -271,7 +275,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .av-author-wrap:hover .av-github-popover, .av-author-wrap:focus-within .av-github-popover { opacity: 1; visibility: visible; transform: translateY(0) scale(1); pointer-events: auto; }
 
 /* --- Footer --- */
-.av-footer { position: relative; background: var(--av-navy); color: #aab6cf; border-top: 1px solid rgba(20, 95, 238, .2); transition: border-color .22s ease, box-shadow .22s ease; }
+.av-footer { position: relative; background: var(--av-navy); color: #aab6cf; border-top: 1px solid rgba(20, 95, 238, .2); transition: border-color .22s ease, box-shadow .22s ease; content-visibility: auto; contain-intrinsic-size: auto 400px; }
 .av-footer:hover { border-top-color: rgba(20, 95, 238, .42); box-shadow: inset 0 1px 0 rgba(20, 95, 238, .16); }
 .av-footer a { color: #d7e0f3; text-decoration: none; }
 .av-footer a:hover { color: #fff; }
@@ -357,8 +361,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 /* ============================================================
    MEDIA QUERIES
    ============================================================ */
-@media (max-width: 991px) { .av-hero-card { transform: none; margin-top: 2rem; } .av-section { padding: 4.5rem 0; } .av-section-capabilities { min-height: 700px; } .av-header-peek { top: 0; transform: none; } .av-header-peek.is-visible { transform: none; } .av-header-peek::after { display: none; } }
-@media (max-width: 575px) { .av-hero-clean { min-height: 620px; padding-top: 5rem; } .av-hero-clean .av-display { font-size: 2.7rem; } .av-hero-screenshot-slot { height: 170px; margin-top: 3rem !important; } .av-section-capabilities { min-height: 0; padding-bottom: 5rem; background: #071a36; } .av-section-process, .av-section-architecture, .av-section-cta { background: #f4f6fa; } .av-hero-liquid { min-height: 680px; } .av-ballot-image { background-position: 55% 12%; } .av-liquid-copy { bottom: 2.8rem; width: calc(100% - 2rem); } .av-liquid-copy .av-display { font-size: 2.25rem; } .av-liquid-copy .av-lead { font-size: .92rem; line-height: 1.5; } .av-hero-logo-mark { top: 5.2rem; left: 50%; width: 300px; } .av-display { font-size: 2.75rem; } .av-navbar .av-logo { width: 110px; } }
+@media (max-width: 991px) { .av-hero-card { transform: none; margin-top: 2rem; } .av-section { padding: 4.5rem 0; contain-intrinsic-size: auto 480px; } .av-section-capabilities { min-height: 700px; contain-intrinsic-size: auto 700px; } .av-header-peek { top: 0; transform: none; } .av-header-peek.is-visible { transform: none; } .av-header-peek::after { display: none; } }
+@media (max-width: 575px) { .av-hero-clean { min-height: 620px; padding-top: 5rem; } .av-hero-clean .av-display { font-size: 2.7rem; } .av-hero-screenshot-slot { height: 170px; margin-top: 3rem !important; } .av-section-capabilities { min-height: 0; padding-bottom: 5rem; background: #071a36; } .av-section-process, .av-section-architecture, .av-section-cta { background: #f4f6fa; } .av-hero-liquid { min-height: 680px; contain-intrinsic-size: auto 680px; } .av-ballot-image { background-position: 55% 12%; } .av-liquid-copy { bottom: 2.8rem; width: calc(100% - 2rem); } .av-liquid-copy .av-display { font-size: 2.25rem; } .av-liquid-copy .av-lead { font-size: .92rem; line-height: 1.5; } .av-hero-logo-mark { top: 5.2rem; left: 50%; width: 300px; } .av-display { font-size: 2.75rem; } .av-navbar .av-logo { width: 110px; } }
 
 @media (max-width: 991px) { .av-auth { height: 620px; } .av-auth-side { padding: 2.4rem 2rem 2rem; } .av-auth-panel { padding: 1.6rem 2rem; } }
 @media (max-width: 575px) { .av-auth { height: 720px; grid-template-columns: 38% 62%; border-radius: 20px; } .av-auth.is-signed-up .av-auth-side { transform: translateX(163.16%); } .av-auth.is-signed-up .av-auth-panel { transform: translateX(-61.29%); } .av-auth-side { padding: 1.6rem 1rem 1.2rem; gap: 1.2rem; } .av-auth-logo { width: 96px; } .av-auth-side .display-5 { font-size: 1.2rem; letter-spacing: -.02em; margin-top: .5rem; } .av-auth-eyebrow { font-size: .62rem; } .av-auth-side-text { font-size: .78rem; } .av-auth-side-foot .av-auth-shield-row { display: none; } .av-auth-side-foot small { font-size: .72rem; } .av-auth-panel { padding: 1.6rem 1rem; } .av-auth-panel .display-6 { font-size: 1.5rem; } .av-auth-panel .form-label { font-size: .78rem; } .av-login-input { min-height: 42px; } }
