@@ -26,17 +26,3 @@ Los archivos son estáticos: abre `averyn-frontend/index.html` y
 
 - Credenciales mock del login: `admin@averyn.test` / `Averyn2026`
 - El login simula la redirección a `dashboard/index.html` (módulo del Bloque B, pendiente).
-
-## Convenciones
-
-- Todas las clases personalizadas usan el prefijo `av-` (nomenclatura BEM simplificada).
-- El Design System vive en `assets/css/design-system.css` (Guía de Diseño v1).
-- Ramas: `dev` → integración; `feature/<bloque>-<tarea>` por actividad.
-- Commits: Conventional Commits (`feat()`, `fix()`, `chore()`, `docs()`).
-
-## Estado del Sprint 1
-
-- [x] Bloque A (Landing + Login) — José
-- [ ] Bloque B (Dashboard shell, Identity, Documents) — Jorge
-- [ ] Bloque C (Biometría + IA/OCR) — Daniel
-- [ ] Bloque D (Electoral, Access, Admin) — Mateo
