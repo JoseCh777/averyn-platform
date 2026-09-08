@@ -13,7 +13,6 @@
 
   var copies = document.querySelectorAll('.av-auth-copy');
   var forms = document.querySelectorAll('.av-auth-form');
-  var currentMode = 'login';
 
   var resetAlerts = function () {
     loginAlertIds.concat(regAlertIds).forEach(function (id) {
@@ -31,7 +30,6 @@
   };
 
   var setMode = function (mode) {
-    currentMode = mode;
     var register = mode === 'register';
     authCard.classList.toggle('is-signed-up', register);
     resetAlerts();
@@ -41,43 +39,6 @@
       if (target) { target.focus(); }
     }, 280);
   };
-
-  /* ---------- Alto del card (sin recorte de contenido) ---------- */
-  var authForms = document.querySelector('.av-auth-forms');
-  var loginModeForm = document.querySelector('.av-auth-form[data-mode="login"]');
-  var registerModeForm = document.querySelector('.av-auth-form[data-mode="register"]');
-
-  var measureForm = function (el, other) {
-    var otherActive = other.classList.contains('is-active');
-    other.classList.remove('is-active');
-    el.classList.add('is-active');
-    var prevDisplay = el.style.display;
-    el.style.position = 'static';
-    el.style.height = 'auto';
-    el.style.display = 'block';
-    var h = el.offsetHeight;
-    el.style.position = '';
-    el.style.height = '';
-    el.style.display = prevDisplay;
-    el.classList.remove('is-active');
-    other.classList.toggle('is-active', otherActive);
-    return h;
-  };
-
-  var syncAuthHeight = function () {
-    var h1 = measureForm(loginModeForm, registerModeForm);
-    var h2 = measureForm(registerModeForm, loginModeForm);
-    authForms.style.height = (Math.max(h1, h2) + 8) + 'px';
-    showMode(currentMode);
-  };
-
-  syncAuthHeight();
-  window.addEventListener('load', syncAuthHeight);
-  var resizeTimer;
-  window.addEventListener('resize', function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(syncAuthHeight, 150);
-  });
 
   document.getElementById('switch-to-register').addEventListener('click', function () {
     setMode('register');
