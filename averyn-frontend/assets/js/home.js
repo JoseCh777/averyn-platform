@@ -4,8 +4,14 @@
   var peek = document.querySelector('.av-header-peek');
   var backToTop = document.querySelector('.av-back-to-top');
 
+  var revealScheduled = false;
   var revealFromTop = function (event) {
-    if (peek) peek.classList.toggle('is-visible', event.clientY <= 96);
+    if (revealScheduled) return;
+    revealScheduled = true;
+    requestAnimationFrame(function () {
+      revealScheduled = false;
+      if (peek) peek.classList.toggle('is-visible', event.clientY <= 96);
+    });
   };
   window.addEventListener('mousemove', revealFromTop);
   if (peek) {
