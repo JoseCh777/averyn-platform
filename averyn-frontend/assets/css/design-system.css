@@ -306,7 +306,7 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .av-auth-side > * { position: relative; z-index: 1; }
 .av-auth-eyebrow { color: #00acd2; }
 .av-auth-side-text { color: rgba(255, 255, 255, .62); line-height: 1.65; }
-.av-auth-shield { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 50%; color: #00acd2; background: rgba(85, 214, 255, .12); border: 1px solid rgba(85, 214, 255, .25); }
+.av-auth-shield { width: 44px; height: 44px; flex: 0 0 44px; border-radius: 50%; color: #00acd2; background: rgba(85, 214, 255, .12); border: 1px solid rgba(85, 214, 255, .25); display: flex; align-items: center; justify-content: center; line-height: 1; }
 
 .av-auth-panel { display: flex; flex-direction: column; justify-content: flex-start; padding: 1.6rem 2.4rem; transition: transform .5s ease-in-out; will-change: transform; }
 .av-auth-form .mb-4 { margin-bottom: .8rem; }
